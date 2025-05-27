@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(270deg, #ffecd2, #fcb69f, #ff9a9e, #fad0c4);
+  background-size: 800% 800%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.container {
+  display: flex;
+  gap: 40px;
+  background-color: #fff;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.face:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#happy .emoji {
+  font-size: 64px;
+  color: #2ecc71;
+}
+
+#neutral .emoji {
+  font-size: 64px;
+  color: #f1c40f;
+}
+
+#sad .emoji {
+  font-size: 64px;
+  color: #e74c3c;
+}
+
+.counter {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.background-bubbles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+  z-index: -1;
+  overflow: hidden;
+  list-style: none;
+}
+
+.background-bubbles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: bubble 25s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+}
+
+.background-bubbles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.background-bubbles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.background-bubbles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.background-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+.background-bubbles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+.background-bubbles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}
+@media (orientation: portrait) {
+  .container {
+    flex-direction: column;
+  }
+
+  .face {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    flex-direction: row;  /* continua deitado */
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .face {
+    width: 90px;
+  }
+}
+
+  .emoji {
+    font-size: 70px !important;
+ 
+  }
+
+  .counter {
+    font-size: 20px;
+    }

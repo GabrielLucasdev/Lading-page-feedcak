@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carinhas Interativas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="background-bubbles"></ul>
+  <div class="container">
+
+    <div class="face" id="sad" onclick="increment('sad')">
+      <div class="emoji">😞</div>
+      <div class="counter" id="sad-count">0</div>
+    </div>
+
+    <div class="face" id="neutral" onclick="increment('neutral')">
+      <div class="emoji">😐</div>
+      <div class="counter" id="neutral-count">0</div>
+    </div>
+   
+    <div class="face" id="happy" onclick="increment('happy')">
+      <div class="emoji">😊</div>
+      <div class="counter" id="happy-count">0</div>
+    </div>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
